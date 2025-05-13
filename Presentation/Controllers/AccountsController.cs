@@ -9,4 +9,10 @@ namespace Presentation.Controllers;
 public class AccountsController(IAccountService accountService) : ControllerBase
 {
     private readonly IAccountService _accountService = accountService;
+
+    [HttpPost]
+    public async Task<IActionResult> Create()
+    {
+        var result = _accountService.CreateAsync();
+    }
 }
